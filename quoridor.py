@@ -2,18 +2,15 @@ import argparse
 
 
 def analyser_commande():
-    python main.py nom_du_joueur
-    parser = argparse.ArgumentParser()
+    # analyser la ligne de commande qui devrait être python main.py nom_du_joueur
+    parser = argparse.ArgumentParser(description = "Jeu Quoridor - phase 1")
     parser.add_argument(
-        'nom_du_joueur', nargs='1', dest='idul', help='IDUL du joueur'
+        "idul", type = str, help='IDUL du joueur'
         )
+
     parser.add_argument(
-        '-h','--help',
-        metavar='TYPE', dest='help' help="show this help message and exit"
-    )
-    parser.add_argument(
-        '-l', '--lister',
-        metavar='TYPE', dest='lister', help='lister les identifiants de vos 20 dernières parties'
+        '-l', "--lister", action = "store_true",
+         help="lister les identifiants de vos 20 dernières parties"
     )
     return parser.parse_args()
 
