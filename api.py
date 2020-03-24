@@ -27,7 +27,7 @@ def initialiser_partie(idul):
   
         identifiant = rep['id'] 
         etat = rep['état']
-        return((identifiant, etat))
+        return(identifiant, etat)
     
     else:
         print(f"Le POST sur {url_base+'initialiser'} a produit le code d'erreur {rep.status_code}.")
