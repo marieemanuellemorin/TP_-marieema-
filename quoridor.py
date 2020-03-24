@@ -67,7 +67,7 @@ def afficher_damier_ascii(état_jeu):
     print(lfoot2)
 
 def demander_typecoup():
-    type_coup = input("Entrez le type de coup du joueur -- 'Q' pour quitter, 'D' pour déplacer le jeton, 'MH' pour placer un mur horizontal, ou 'MV' pour placer un mur vertical: ")
+    type_coup = input("Entrez type de coup: 'Q': quitter, 'D': déplacer jeton, 'MH': mur horizontal, 'MV' :mur vertical: ")
     return type_coup
 def demander_position():
     position = input("Entrez la position (x,y) du coup: ")
