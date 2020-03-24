@@ -5,14 +5,12 @@ url_base = 'https://python.gel.ulaval.ca/quoridor/api'
 def lister_parties(idul):
     rep = requests.get(f'{url_base}/lister/', params={'idul': f'{idul}'})
     if rep.status_code == 200:
-        # la requête s'est déroulée normalement; décoder le JSON
-        
+        # la requête s'est déroulée normalement; décoder le JSON 
         rep = rep.json()
-        
         if "message" in rep.keys():
             raise RuntimeError(rep['message'])
-        else:
-            return rep
+        
+        return rep
     
     else:
         print(f"Le GET sur {url_base+'lister'} a produit le code d'erreur {rep.status_code}.")
@@ -26,11 +24,10 @@ def initialiser_partie(idul):
         
         if "message" in rep.keys():
             raise RuntimeError(rep['message'])
-        else:
-            identifiant = rep['id'] 
-            etat = rep['état']
-
-            return((identifiant, etat))
+  
+        identifiant = rep['id'] 
+        etat = rep['état']
+        return((identifiant, etat))
     
     else:
         print(f"Le POST sur {url_base+'initialiser'} a produit le code d'erreur {rep.status_code}.")
