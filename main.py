@@ -14,7 +14,7 @@ if __name__ == "__main__":
         type_coup = quoridor.demander_typecoup()
         if type_coup == 'Q':
             quitter = True
-            print('Au revoir!')
+            print('Au revoir')
             break
         position = quoridor.demander_position()
         y = api.jouer_coup(id_partie, type_coup, position)
