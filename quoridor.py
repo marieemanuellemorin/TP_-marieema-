@@ -47,7 +47,7 @@ def afficher_damier_ascii(état_jeu):
     print(f'Légende: 1={état_jeu["joueurs"][0]["nom"]}, 2={état_jeu["joueurs"][1]["nom"]}')
     print(lhead1)
     for y in range(9, 0, -1):
-        lignefull = f'{y}' + vdebut
+        lignefull= f'{y}' + vdebut
         lignehalf = hdebut
         for x in range(1, 10):
             if (len(f'{full[y-1][x-1]}') == 3) and (x > 1):
@@ -59,7 +59,7 @@ def afficher_damier_ascii(état_jeu):
         lignefull += '|'
         lignehalf += '|'
         print(lignefull)
-        if Y > 1:
+        if y > 1:
             print(lignehalf)
     print(lfoot1)
     print(lfoot2)
